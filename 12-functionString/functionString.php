@@ -1,0 +1,32 @@
+<?php
+
+$str = "hello my name is diako dindar im 37 years old.";
+$arr = ['diako','mona','dayan'];
+$tag = "<a href='https://dayandesign.info'>DayanDesign</a>";
+echo $str;
+echo "<hr>";
+echo "is_string : ".is_string($str);
+echo "<hr>";
+echo "strlen : ".strlen($str);
+echo "<hr>";
+echo "strToUpper : ".strtoupper($str);
+echo "<hr>";
+echo "strToLower : ".strtolower($str);
+echo "<hr>";
+echo "str_repeate : ".str_repeat($str,2);
+echo "<hr>";
+echo "stripos : ".stripos($str,'diako');
+echo "<hr>";
+echo "str_replace : ". str_replace('diako dindar','mona saeidi',$str);
+echo "<hr>";
+echo "str_word_count : ".str_word_count($str);
+echo "<hr>";
+print_r(explode(" ", $str));
+echo "<hr>";
+echo "implode : ". implode(" ",$arr);
+echo "<hr>";
+echo "md5 : ". md5($str);
+echo "<hr>";
+echo "htmlentities : ".htmlentities($tag);
+echo "<hr>";
+echo "strip_tag : ".strip_tags($tag);
