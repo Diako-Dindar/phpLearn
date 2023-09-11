@@ -16,16 +16,3 @@ echo "<hr>";
 echo jdate('Y-m-d H:i:s','','','Europe/Istanbul');
 echo "<hr>";
 
-
-// convert date to timestamp and convert timestamp to jalali
-$randomDate = '2022-12-31';
-
-function convertDate($date){
-    list($year,$mounth,$day) = explode('-',$date);
-    $timestamp = mktime(10,null,null,$mounth,$day,$year);
-    return jdate('Y-m-d',$timestamp);
-    
-}
-echo $randomDate;
-echo "<br>";
-echo convertDate($randomDate);
