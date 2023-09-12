@@ -1,13 +1,13 @@
 <?php
 
-function generateRandomString($input)
+function generateRandomString($length)
 {
-    $string = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    $string = "0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM!@#$%&";
     $stringLength = strlen($string);
-    $finalString = '';
-    for ($i=0; $i < $input; $i++) {
-        $finalString.=$string[rand(0,$stringLength-1)];
+    $finalString = 'NV-';
+    for ($i=0; $i < $length; $i++) {
+        $finalString.= $string[ rand(0,$stringLength -1) ];
     }
     return $finalString;
 }
-echo generateRandomString(8);
+echo generateRandomString(6);
