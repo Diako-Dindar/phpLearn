@@ -15,6 +15,7 @@ if(isset($_SERVER["REQUEST_METHOD"]) == "POST") {
             $fileNameSection1 = md5(time().$fileNameSeparator[0]);
             $fileNameSection2 = strtolower($fileNameSeparator[1]);
             $fileNameFinal = $fileNameSection1.'.'.$fileNameSection2;
+            $maxSize = 3 * 1024 * 1024; //convert megaByte to Byte
 
             $uploadPath = 'asset/upload/';
             $uploadFileName = $uploadPath.$fileNameFinal;
@@ -26,10 +27,14 @@ if(isset($_SERVER["REQUEST_METHOD"]) == "POST") {
             ];
 
             if(in_array($fileType, $fileTypeAllow)) {
-                if(move_uploaded_file($fileTmp, $uploadFileName)) {
-                    $msg = "<p class='msg'>File Uploaded Successfully</p>";
+                if($fileSize < $maxSize) {
+                    if(move_uploaded_file($fileTmp, $uploadFileName)) {
+                        $msg = "<p class='msg'>File Uploaded Successfully</p>";
+                    } else {
+                        $msg = "<p class='msg'>Error in sending The File</p>";
+                    }
                 } else {
-                    $msg = "<p class='msg'>Error in sending The File</p>";
+                    $msg = "<p class='msg'>Your File Size Is More Than 3 MB</p>";
                 }
             } else {
                 $msg = "<p class='msg'>You Are Not Allowed To Upload Such A File</p>";
