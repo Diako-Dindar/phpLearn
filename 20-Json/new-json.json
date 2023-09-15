@@ -1,0 +1,11 @@
+{
+    "name": "Diako Dindar",
+    "favColor": "Blue",
+    "age": 37,
+    "email": "diako.dindar@gmail.com",
+    "isSingle": false,
+    "freinds": [
+        "Mona",
+        "dayan"
+    ]
+}
